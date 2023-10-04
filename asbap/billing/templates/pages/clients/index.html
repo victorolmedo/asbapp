@@ -1,5 +1,26 @@
 {% extends "../base.html" %}
 
 {% block contenido %}
-  List of Clients
+  <h1 style="padding-left:13%">Clients</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+      <div class="table-responsive">
+        <table class="table" id="datatable-customers">
+          <thead>
+          <tr>
+            <th class="centered">Code</th>
+            <th class="centered">Name</th>
+            <th class="centered">Email</th>
+            <th class="centered">Phone</th>
+            <th class="centered">Active</th>
+            <th class="centered">Action</th>
+          </tr>
+          </thead>
+          <tbody id="tableBody_customers"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
