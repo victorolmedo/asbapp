@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from rest_framework import routers
 from . import views
 
@@ -7,6 +7,8 @@ router = routers.DefaultRouter()
 router.register(r'customers', views.CustomerViewSet)
 
 urlpatterns = [
+    path('api/', include(router.urls)),
+
     path('', views.dashboard, name='dashboard'),
     #Clients
     path('addClient/', views.addClient, name='addClient'),
