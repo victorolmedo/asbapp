@@ -1,5 +1,57 @@
 {% extends "../base.html" %}
+{% load static %}
 
 {% block contenido %}
-  List of Clients
+  <h1 style="padding-left:13%">Clients</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+      <div class="table-responsive">
+        <table class="table" id="datatable-customers">
+          <thead>
+          <tr>
+            <th class="centered">Code</th>
+            <th class="centered">Name</th>
+            <th class="centered">Email</th>
+            <th class="centered">Phone</th>
+            <th class="centered">Active</th>
+            <th class="centered">Action</th>
+          </tr>
+          </thead>
+          <tbody id="tableBody_customers"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Vertically centered scrollable modal -->
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Recipient:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <!--  custom JS -->
+    <script src="{% static  '/assets/js/custom.js'%}"></script>
+
 {% endblock %}

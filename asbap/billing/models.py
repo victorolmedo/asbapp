@@ -1,4 +1,15 @@
 from django.db import models
+
+class Province(models.Model):
+    name = models.CharField(max_length=100)
+    code = models.CharField(max_length=100)
+
+
+class City(models.Model):
+    name = models.CharField(max_length=100)
+    provice_id = models.ForeignKey(Province, null=True, on_delete=models.SET_NULL)
+
+
 class Customer(models.Model):
     first_name =models.CharField(max_length=100)
     last_name =models.CharField(max_length=100)
@@ -11,5 +22,5 @@ class Customer(models.Model):
     birthday =models.DateField()
     active =models.BooleanField()
     person_type =models.CharField(max_length=20)
-    city_id =models.IntegerField()
+    city_id =models.ForeignKey(City, null=True, on_delete=models.SET_NULL)
     user_id =models.IntegerField()

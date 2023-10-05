@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from asbap.billing.models import Customer
+from asbap.billing.models import City, Province, Customer
 
 
 def customer_list(request):
