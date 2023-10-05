@@ -41,8 +41,8 @@ const listCustomers = async () => {
                         : "<i class='fa-solid fa-xmark' style='color: red;'></i>"}
                     </td>
                     <td>
-                        <button class='btn btn-sm btn-primary'><i class='fa-solid fa-pencil'></i></button>
-                        <button class='btn btn-sm btn-danger'><i class='fa-solid fa-trash-can'></i></button>
+                        <button class='btn btn-sm btn-primary'><i class='fa-solid fa-pencil'  data-bs-toggle='modal' data-bs-target='#myModal'></i></button>
+                        <button class='btn btn-sm btn-danger'><i class='fa-solid fa-trash-can' data-bs-toggle='modal' data-bs-target='#myModal'></i></button>
                     </td>
                     <td></td>
                 </tr>`;
@@ -55,4 +55,8 @@ const listCustomers = async () => {
 
 window.addEventListener("load", async () => {
     await initDataTable();
+});
+
+$('#myModal').on('shown.bs.modal', function () {
+// Do something when the modal is shown
 });
